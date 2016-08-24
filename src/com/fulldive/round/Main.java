@@ -28,7 +28,7 @@ public class Main {
         ArrayList<Point> list; //коллекция для хранения точек
 
         //проверка на корректность данных
-        if(n > 2 * r){
+        if (n > 2 * r) {
             System.err.println("Данные некорректны");
             System.exit(-1);
         }
@@ -39,22 +39,21 @@ public class Main {
         bRad = 2 * Math.asin(0.2 * n / (2 * r));
 
 
-
         //вычисляем максимальное число элементов
-        result = (int) (2 * Math.PI /(aRad + bRad));
+        result = (int) (2 * Math.PI / (aRad + bRad));
 
         //однако, при таком значении beta, элементы будут распределены по окружности неравномерно. Для равномерного распределения нужно изменить угол beta.
 
         bRad = (2 * Math.PI - result * aRad) / result;
 
-        //вычисляем число точек, нераспределенный угол и дельту нераспределенного угла для каждого сегмента
+        //вычисляем число точек
         k = 2 * result;
 
         //вычисляем новое расстояние между концами соседних отрезков и проверяем, что оно не меньше, чем 0.2* n
 
         n1 = 2 * r * Math.sin(bRad / 2);
 
-        if (n1 < 0.2 * n){
+        if (n1 < 0.2 * n) {
             System.err.println("Что-то пошло не так");
         }
 
@@ -74,11 +73,11 @@ public class Main {
             int kAlpha;
             int kBeta;
             double fi;
-            if ((i % 2) == 0){
+            if ((i % 2) == 0) {
 
                 kAlpha = i / 2;
                 kBeta = i / 2;
-            }else {
+            } else {
                 kAlpha = (int) (i / 2) + 1;
                 kBeta = (int) (i / 2);
             }
@@ -87,13 +86,13 @@ public class Main {
         }
 
         //вывод координат точек в полярных координатах
-        System.out.println("Polar berings: \n");
+        System.out.println("Polar coordinates: \n");
         for (int i = 0; i < k; i++) {
             System.out.println(list.get(i).getRadius() + "    " + list.get(i).getFi());
         }
 
         //вывод координат точек в декартовых координатах
-        System.out.println("\n\nDekart berings: \n");
+        System.out.println("\n\nCartesian coordinates: \n");
 
         for (int i = 0; i < k; i++) {
             System.out.println(list.get(i).getX() + "    " + list.get(i).getY());
