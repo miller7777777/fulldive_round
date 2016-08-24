@@ -38,8 +38,7 @@ public class Main {
         aRad = 2 * Math.asin(n / (2 * r));
         bRad = 2 * Math.asin(0.2 * n / (2 * r));
 
-//        System.out.println("Alpha = " + aRad);
-//        System.out.println("Beta = " + bRad);
+
 
         //вычисляем максимальное число элементов
         result = (int) (2 * Math.PI /(aRad + bRad));
