@@ -58,12 +58,6 @@ public class Main {
         }
 
         System.out.println("Numbers of segment = " + result + "\n");
-
-
-//        System.out.println("Numbers of points = " + k);
-//        System.out.println("Unassigned corner = " + psi);
-//        System.out.println("Delta of unassigned corner = " + deltaPsi);
-
         list = new ArrayList<Point>();
 
 
@@ -88,14 +82,25 @@ public class Main {
         //вывод координат точек в полярных координатах
         System.out.println("Polar coordinates: \n");
         for (int i = 0; i < k; i++) {
-            System.out.println(list.get(i).getRadius() + "    " + list.get(i).getFi());
+//            System.out.println(list.get(i).getRadius() + "    " + list.get(i).getFi());
+            System.out.printf("%8.4f", list.get(i).getRadius());
+            System.out.printf("   ");
+            System.out.printf("%8.4f", list.get(i).getFi());
+            System.out.printf("\n");
         }
 
         //вывод координат точек в декартовых координатах
         System.out.println("\n\nCartesian coordinates: \n");
 
+
         for (int i = 0; i < k; i++) {
-            System.out.println(list.get(i).getX() + "    " + list.get(i).getY());
+//            System.out.println(list.get(i).getX() + "         " + list.get(i).getY());
+            System.out.printf("%8.4f", list.get(i).getX());
+            System.out.printf("   ");
+            System.out.printf("%8.4f", list.get(i).getY());
+            System.out.printf("\n");
+
+
         }
 
     }
